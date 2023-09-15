@@ -69,10 +69,11 @@ public class Circus {
 
         animalArrayList.sort(Animal.AnimalNameComparator);
         System.out.println("After sorting ...");
+
+        Elephant StrongOne = new Elephant("StrongOne");
+        animalArrayList.add(StrongOne);
+
         printAllAnimals(animalArrayList);
-//        makeAnimalsTalk();
-//        System.out.println("Total value of animals " + calculateAssetValue(animals));
-//        System.out.println("Total value of equipments " + calculateAssetValue(equipments));
 
         Cage<Duck> duckCage = new Cage<>();
         Duck duck = new Duck("Donald");
@@ -84,6 +85,10 @@ public class Circus {
         ArrayList<Cage> cages = new ArrayList<>();
         cages.add(duckCage);
         cages.add(parrotCage);
+
+        Cage<Elephant> elephantCage = new Cage<>();
+        elephantCage.lockUp(StrongOne);
+        cages.add(elephantCage);
 
         for (Cage c : cages) {
             c.release();
